@@ -8,7 +8,7 @@ class Program
         List <int > numList = new List<int>();
         while (true)
         {
-            Console.Write("Enter a number and enter 0 to exit: ");
+            Console.Write("Enter a number (enter 0 to stop): ");
             int userInput = int.Parse(Console.ReadLine());
 
             if (userInput != 0)
@@ -58,16 +58,13 @@ class Program
                 min = i;
             }
         }
-        Console.WriteLine($"Min: {min}");
+        Console.WriteLine($"Min Number Above Zero: {min}");
+        numList.Sort((a, b) => a.CompareTo(b)); // this is a sorting function in assending order
 
-    
-
-
-
-
-
-
-
+        foreach (int n in numList) // prints out the items of the list to the console!
+        {
+            Console.WriteLine(n);
+        }
         
     }
     
