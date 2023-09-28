@@ -1,10 +1,5 @@
 ﻿namespace Learning02;
 
-// public class Resume
-// {
-//     public string _fullName;
-//     public List<Job> _jobs = new();  
-// }
 public class Resume
 {
     public string _name;
@@ -25,3 +20,16 @@ public class Resume
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
