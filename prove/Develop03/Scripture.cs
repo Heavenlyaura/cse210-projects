@@ -19,8 +19,9 @@ public class Scripture
     public Scripture(string book, string verse, string endVerse)
     {
         _book = book;
-        _verse = $"{verse} {endVerse}";
-        _scriptureText = verse;
+        _verse = verse;
+        _endVerse = endVerse;
+        _scriptureText = $"{verse} {endVerse}";
     }
 
     public void HideWords(int hideCount)
@@ -53,6 +54,6 @@ public class Scripture
 
     public string GetRenderedText()
     {
-        return _scriptureText;
+        return $"{_book}: {_scriptureText}";
     }
 }
