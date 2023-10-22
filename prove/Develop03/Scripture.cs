@@ -21,7 +21,7 @@ public class Scripture
         _book = book;
         _verse = verse;
         _endVerse = endVerse;
-        _scriptureText = $"{verse} {endVerse}";
+        _scriptureText = $"{verse} \n{endVerse}";
     }
 
     public void HideWords(int hideCount)
