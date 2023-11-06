@@ -4,6 +4,7 @@ public class Menu
 {
     public void DisplayMenu()
     {
+        Console.WriteLine();
         Console.WriteLine("Welcome to Mindfulness Program");
         Console.WriteLine("Menu Option: ");
         Console.WriteLine("Start breathing activity");

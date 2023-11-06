@@ -9,6 +9,7 @@ class Program
         Menu menu = new();
         BreathingActivity breathingActivity = new();
         ReflectionActivity reflectionActivity = new();
+        ListingActivity listingActivity = new();
 
 
         while (true)
@@ -26,7 +27,12 @@ class Program
 
                 case 2:
                     option = 2;
-                    reflectionActivity.ReflectionSession(40);
+                    reflectionActivity.ReflectionSession();
+                    break;
+
+                case 3:
+                    option = 3;
+                    listingActivity.ListeningSession(5);
                     break;
            }     
         }

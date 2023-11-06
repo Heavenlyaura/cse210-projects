@@ -26,14 +26,14 @@ public class ReflectionActivity : ActivityClass
     //     _description = description;
     // }
 
-    private string PickPrompt()
-    {
-        int randomIndex = _random.Next(0, _promptlist.Count);
-        string randomPrompt = _promptlist[randomIndex];
-        _promptlist.RemoveAt(randomIndex);
+    // private string PickPrompt()
+    // {
+    //     int randomIndex = _random.Next(0, _promptlist.Count);
+    //     string randomPrompt = _promptlist[randomIndex];
+    //     _promptlist.RemoveAt(randomIndex);
 
-        return randomPrompt;
-    }
+    //     return randomPrompt;
+    // }
 
 
     private void PickPromptQuestion()
@@ -46,25 +46,24 @@ public class ReflectionActivity : ActivityClass
         }
     }
 
-    public void ReflectionSession(int duration)
+    public void ReflectionSession()
     {
-        int time = duration / 3 % 4;
         Console.Clear();
         StartingMessage(_name, _description);
         Console.Write("Please wait......");
         SpinnerAnimation(0, 4);
         Console.WriteLine();
 
-        string word = PickPrompt();
+        string word = PickFromList(_promptlist);
         Console.WriteLine($"-----{word}-----");
         Console.Write("Press enter to continue");
-        Console.WriteLine(time);
         Console.ReadLine();
 
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience");
         Console.Write("You may begin in: ");
         CountDown(5);
         Console.WriteLine();
+        Console.Clear();
 
         PickPromptQuestion();
 

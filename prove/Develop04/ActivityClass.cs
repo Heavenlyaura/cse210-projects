@@ -3,6 +3,7 @@
 public class ActivityClass
 {
     private List<string> _spinnerstrings = new() { "|", "/", "-", "\\"};
+    Random _random = new();
 
     // private string _endingmessage;
     public void StartingMessage(string activityName, string activityDescription)
@@ -46,6 +47,15 @@ public class ActivityClass
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
+    }
+
+    public string PickFromList(List<string> list)
+    {
+        int randomIndex = _random.Next(0, list.Count);
+        string randomPrompt = list[randomIndex];
+        list.RemoveAt(randomIndex);
+
+        return randomPrompt;
     }
 
     public void Timer(int duration)
