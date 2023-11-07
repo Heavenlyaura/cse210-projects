@@ -1,4 +1,6 @@
-﻿namespace Develop04;
+﻿using System.Diagnostics;
+
+namespace Develop04;
 
 public class ListingActivity : ActivityClass
 {
@@ -9,27 +11,32 @@ public class ListingActivity : ActivityClass
 
 
     
-    public void ListeningSession(int duration)
+   public void ListeningSession(int durationInSeconds)
+{
+    StartingMessage(name, _description);
+    SpinnerAnimation(0, 4);
+
+    Console.WriteLine("Ready!");
+    Console.Clear();
+    string question = PickFromList(_list);
+    Console.WriteLine($"----- {question} -----");
+    Console.WriteLine("You may begin");
+
+    // Start a stopwatch to keep track of the elapsed time
+    Stopwatch stopwatch = new();
+    stopwatch.Start();
+
+    // Continue the session until the elapsed time reaches the specified duration
+    while (stopwatch.Elapsed.TotalSeconds < durationInSeconds)
     {
-        
-        StartingMessage(name, _description);
-        SpinnerAnimation(0,4);
-
-        Console.WriteLine("Ready!");
-        Console.Clear();
-        string question = PickFromList(_list);
-        Console.WriteLine($"----- {question} -----");
-        Console.WriteLine("You may begin");
-
-        while (duration != 0)
-        {
-            Console.Write("> ");
-            Console.ReadLine();
-            duration -= 1;
-        }
-        SpinnerAnimation(0,3);
-        EndingMessage(duration, name);
-        SpinnerAnimation(0,3);
-        Console.Clear();
+        Console.Write("> ");
+        Console.ReadLine();
     }
-}
+
+    stopwatch.Stop();
+
+    SpinnerAnimation(0, 3);
+    EndingMessage(durationInSeconds, name);
+    SpinnerAnimation(0, 3);
+    Console.Clear();
+}}

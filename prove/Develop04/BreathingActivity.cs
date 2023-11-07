@@ -7,7 +7,7 @@ public class BreathingActivity : ActivityClass
     private string _actvityname = "Breathing Activity!";
     private string _description = "Help the you pace your breathing to have a session of deep breathing for a certain amount of time. you might find more peace and less stress through the exercise.\n";
 
-    public void BreathingSession(int duration, int reps=1)
+    public void BreathingSession(int duration)
     {
         int start = 0;
         int end = 5;
@@ -18,21 +18,25 @@ public class BreathingActivity : ActivityClass
         SpinnerAnimation(start, end);
         Console.Clear();
         Console.WriteLine("Ready!");
+        
+        Stopwatch stopwatch = new();
+        stopwatch.Start();
 
-        for (int i = 0; i < reps; i++)
+        while (stopwatch.Elapsed.TotalSeconds < duration)
         {
             Console.Write("Breathe in....");
             // Thread.Sleep(1000);
-            CountDown(duration);
+            CountDown(5);
             // Console.Write("Hold ");
 
             Console.Write("\nBreathe Out.... ");
-            CountDown(duration);
+            CountDown(5);
             // Thread.Sleep(1500);
             Console.WriteLine();
         }
 
-        EndingMessage(reps * duration * 2, _actvityname);
+        stopwatch.Stop();
+        // EndingMessage(reps * duration * 2, _actvityname);
         SpinnerAnimation(start, end);
         Console.Clear();
     }

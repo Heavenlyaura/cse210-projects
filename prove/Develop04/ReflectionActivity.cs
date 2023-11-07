@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace Develop04;
 
@@ -26,27 +27,7 @@ public class ReflectionActivity : ActivityClass
     //     _description = description;
     // }
 
-    // private string PickPrompt()
-    // {
-    //     int randomIndex = _random.Next(0, _promptlist.Count);
-    //     string randomPrompt = _promptlist[randomIndex];
-    //     _promptlist.RemoveAt(randomIndex);
-
-    //     return randomPrompt;
-    // }
-
-
-    private void PickPromptQuestion()
-    {
-        foreach (string i in _promptquestions)
-        {
-            Console.Write($"> {i} ");
-            SpinnerAnimation(0, 3);
-            Console.WriteLine();
-        }
-    }
-
-    public void ReflectionSession()
+    public void ReflectionSession(int duration)
     {
         Console.Clear();
         StartingMessage(_name, _description);
@@ -65,8 +46,22 @@ public class ReflectionActivity : ActivityClass
         Console.WriteLine();
         Console.Clear();
 
-        PickPromptQuestion();
+        Stopwatch stopwatch = new();
+        stopwatch.Start();
 
+        while (stopwatch.Elapsed.TotalSeconds < duration)
+        {         
+            int i = _random.Next(0, _promptlist.Count);   
+            Console.Write($"> {_promptlist[i]} ");
+            _promptlist.Remove(_promptlist[i]); // remove question from list to avoid repetition
+            SpinnerAnimation(0, 3);
+            Console.WriteLine(); 
+        }
+
+        stopwatch.Stop();
+        SpinnerAnimation(0, 3);
+        EndingMessage(duration, _name);
+        SpinnerAnimation(0, 3);
         Console.Clear();
     }
 }

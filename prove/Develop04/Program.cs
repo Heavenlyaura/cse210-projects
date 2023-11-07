@@ -11,7 +11,6 @@ class Program
         ReflectionActivity reflectionActivity = new();
         ListingActivity listingActivity = new();
 
-
         while (true)
         {
             menu.DisplayMenu();
@@ -22,17 +21,17 @@ class Program
             {
                 case 1:
                     option = 1;
-                    breathingActivity.BreathingSession(3,3);
+                    breathingActivity.BreathingSession(15);
                     break;
 
                 case 2:
                     option = 2;
-                    reflectionActivity.ReflectionSession();
+                    reflectionActivity.ReflectionSession(5);
                     break;
 
                 case 3:
                     option = 3;
-                    listingActivity.ListeningSession(5);
+                    listingActivity.ListeningSession(10);
                     break;
            }     
         }
