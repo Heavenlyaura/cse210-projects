@@ -7,7 +7,7 @@ public class BreathingActivity : ActivityClass
     private string _actvityname = "Breathing Activity!";
     private string _description = "Help the you pace your breathing to have a session of deep breathing for a certain amount of time. you might find more peace and less stress through the exercise.\n";
 
-    public void BreathingSession(int duration)
+    private void BreathingSession(int duration)
     {
         int start = 0;
         int end = 5;
@@ -39,5 +39,10 @@ public class BreathingActivity : ActivityClass
         // EndingMessage(reps * duration * 2, _actvityname);
         SpinnerAnimation(start, end);
         Console.Clear();
+    }
+
+    public void RunTheActivity(int duration)
+    {
+        BreathingSession(duration);
     }
 }

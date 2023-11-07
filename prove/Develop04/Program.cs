@@ -15,28 +15,35 @@ class Program
         {
             menu.DisplayMenu();
             int option = menu.ChooseOption();
-            Console.WriteLine();
 
             switch (option)
             {
                 case 1:
                     option = 1;
-                    breathingActivity.BreathingSession(15);
+
+                    Console.Write("How long do you want it to last (in seconds)?");
+                    int duration = int.Parse(Console.ReadLine());
+                    breathingActivity.RunTheActivity(duration);
                     break;
 
                 case 2:
                     option = 2;
-                    reflectionActivity.ReflectionSession(5);
+
+                    Console.Write("How long do you want it to last (in seconds)?");
+                    int time = int.Parse(Console.ReadLine());
+                    reflectionActivity.RunTheActivity(time);
                     break;
 
                 case 3:
                     option = 3;
-                    listingActivity.ListeningSession(10);
+
+                    Console.Write("How long do you want it to last (in seconds)?");
+                    int timer = int.Parse(Console.ReadLine());
+                    listingActivity.RunTheActivity(timer);
                     break;
            }     
         }
        
     }
 }
-
 
