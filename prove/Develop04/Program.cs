@@ -41,6 +41,12 @@ class Program
                     int timer = int.Parse(Console.ReadLine());
                     listingActivity.RunTheActivity(timer);
                     break;
+
+                case 4:
+                    option = 4;
+                    Console.Clear();
+                    Environment.Exit(0);
+                    break;
            }     
         }
        

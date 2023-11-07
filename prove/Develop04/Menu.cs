@@ -7,9 +7,10 @@ public class Menu
         Console.WriteLine();
         Console.WriteLine("Welcome to Mindfulness Program");
         Console.WriteLine("Menu Option: ");
-        Console.WriteLine("Start breathing activity");
-        Console.WriteLine("Start reflecting activity");
-        Console.WriteLine("Start listing activity");
+        Console.WriteLine("1. Breathing activity");
+        Console.WriteLine("2. Reflecting activity");
+        Console.WriteLine("3. Listing activity");
+        Console.WriteLine("4. Exit");
     }
 
     public int ChooseOption()
