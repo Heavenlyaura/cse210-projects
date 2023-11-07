@@ -36,7 +36,7 @@ public class BreathingActivity : ActivityClass
         }
 
         stopwatch.Stop();
-        // EndingMessage(reps * duration * 2, _actvityname);
+        EndingMessage(duration, _actvityname);
         SpinnerAnimation(start, end);
         Console.Clear();
     }
