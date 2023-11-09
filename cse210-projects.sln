@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "final", "final", "{1216207E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinalProject", "final\FinalProject\FinalProject.csproj", "{A2E49771-FB88-4D2C-B69A-614C28B27855}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foundation1", "final\Foundation1\Foundation1.csproj", "{D6289C82-D0BF-4B12-A387-F0A7179D65E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foundation1",  "final\Foundation1\Foundation1.csproj", "{D6289C82-D0BF-4B12-A387-F0A7179D65E5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Foundation2", "final\Foundation2\Foundation2.csproj", "{5826F774-65EF-48C5-AAFB-6CBD4ABE38FD}"
 EndProject
