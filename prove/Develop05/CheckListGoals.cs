@@ -2,13 +2,6 @@
 //Public class to can use in "other window"
 public class CheckListGoal : Goal // SimpleGoal child class of Goal
 {
-    //Protect class inside the propieties to not affect the working of the program (only the inherit class)
-    //Protect class inside the propieties to not affect the working of the program (only the inherit class)
-    //protected string _title;
-    //protected string _description;
-    //protected int _pointsToComplete;
-    //protected List<string> _listOfGoals = new List<string>();
-
     //This class propieties
     private int _currentlyCounter;
     private int _verificationCounter;
