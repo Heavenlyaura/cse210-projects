@@ -26,6 +26,14 @@ public class Bishop : MemberInfo
         int dateJoined = int.Parse(memberInformation[3]);
         string gender = memberInformation[4];
         string calling = memberInformation[5];
+        int? key = null;
+        foreach (var kvp in _memberRecords) // get the key to display membership record member
+        {
+            if (kvp.Value[0] == firstName)
+            {
+                key = kvp.Key;
+            }
+        }
 
         // displaing information
         Console.WriteLine($"Firstname: {firstName}");
@@ -34,6 +42,7 @@ public class Bishop : MemberInfo
         Console.WriteLine($"Gender: {gender.ToUpper()}");
         Console.WriteLine($"DateJoined: {dateJoined}");
         Console.WriteLine($"calling: {calling}");
+        Console.WriteLine($"MRN: {key}");
     }
     public void SearchMemberinfoByName(string search)
     {

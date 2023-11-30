@@ -6,14 +6,9 @@ class Program
 {
     static void Main(string[] args)
     {
+        Menu menu = new();
         MemberInfo memberInfo = new();
-        Console.WriteLine("Welcome to Kubwa Ward 1");
-        Console.WriteLine("Choose Option: ");
-        Console.WriteLine("1. Bishop: ");
-        Console.WriteLine("2. Relief Society: ");
-        Console.WriteLine("3. Elders Quourm: ");
-        Console.WriteLine("4. Member: ");
-        Console.Write("> ");
+        menu.DisplayMenu();
         int option = int.Parse(Console.ReadLine());
 
         if (option == 1)
@@ -21,15 +16,11 @@ class Program
             Bishop bishop = new();
             Console.Write("Enter MRN: ");
             int bMrn = int.Parse(Console.ReadLine());
+            menu.ClearConsole();
             memberInfo.SetRecordNumber(bMrn);
             if (bishop.IsBishop(bMrn)) // checks if the record number entered matches that of the bishop
             {
-                Console.WriteLine("Welcome Bishop");
-                Console.WriteLine("1. View Personal Information");
-                Console.WriteLine("2. Search Member");
-                Console.WriteLine("3. View Ward Directory");
-                Console.WriteLine("4. Create Member Record");
-                Console.Write("Enter Option: ");
+                menu.BishopMenu();
                 int bo = int.Parse(Console.ReadLine());
 
                 if (bo == 1)
@@ -38,11 +29,10 @@ class Program
                     bishop.ViewInfo();
                 }
                 else if (bo == 2)
-                {
-                    Console.WriteLine("1. Search MRN: ");
-                    Console.WriteLine("2. Search Name: ");
-                    Console.Write("> ");
+                {   
+                    menu.BishopSearchOptions();
                     int so = int.Parse(Console.ReadLine());
+                    menu.ClearConsole();
 
                     if (so == 1)
                     {
