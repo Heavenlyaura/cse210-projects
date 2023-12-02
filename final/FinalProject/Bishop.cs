@@ -44,7 +44,7 @@ public class Bishop : MemberInfo
         Console.WriteLine($"calling: {calling}");
         Console.WriteLine($"MRN: {key}");
     }
-    public void SearchMemberinfoByName(string search)
+    public  void SearchMemberinfoByName(string search)
     {
         List<int> foundkeys = new();
         foreach (var kvp in _memberRecords)
@@ -84,5 +84,34 @@ public class Bishop : MemberInfo
        {
         return false;
        }
+    }
+    public void CreateMemberrecord()
+    {
+        Console.Write("Enter Firstname: ");
+        string firstName = Console.ReadLine().ToLower();
+        
+        Console.Write("Enter Lastname: ");
+        string lastName = Console.ReadLine().ToLower();
+
+        Console.Write("Enter age: ");
+        string age = Console.ReadLine().ToLower();
+
+        Console.Write("Enter JearJoined: ");
+        string YearJoined = Console.ReadLine().ToLower();
+
+        Console.Write("Enter gender (m/f): ");
+        string gender = Console.ReadLine().ToLower();
+
+        Console.Write("Enter Calling: ");
+        string calling = Console.ReadLine().ToLower();
+        int recordNumber = GeneraterecordNumber(); // Genrates a new record number
+        _memberRecords.Add(recordNumber, new List<string> {firstName, lastName, age, YearJoined, gender, calling}); // adds new member to the dictionary
+    }
+    public int GeneraterecordNumber()
+    {
+        int lastKey = _memberRecords.Keys.LastOrDefault();  
+        int newRecordNumber = lastKey += 1;
+
+        return newRecordNumber;
     }
 }

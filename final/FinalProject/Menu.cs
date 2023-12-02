@@ -21,8 +21,8 @@ public class Menu
         Console.WriteLine("2. Search Member");
         Console.WriteLine("3. View Ward Directory");
         Console.WriteLine("4. Create Member Record");
+        Console.WriteLine("5. Return to Main menu");
         Console.Write("Enter Option: ");
-
     }
 
     public void BishopSearchOptions()
@@ -32,7 +32,13 @@ public class Menu
         Console.Write("> ");
     }
 
-    public void ClearConsole(){
-        Console.Clear();
-    }
+   public void Editmenu()
+   {
+        Console.WriteLine("1. Edit Firstname");
+        Console.WriteLine("2. Edit Lastname");
+        Console.WriteLine("3. Edit Age");
+        Console.WriteLine("4. Edit Date Joined");
+        Console.WriteLine("5. Edit Gender");
+        Console.WriteLine("6. Edit Calling");
+   }
 }
