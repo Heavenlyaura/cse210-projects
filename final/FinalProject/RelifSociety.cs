@@ -1,6 +1,6 @@
 ﻿namespace FinalProject;
 
-public class RelifSociety
+public class RelifSociety : MemberInfo
 {
       public override void SearchMemberInfo()
     {
