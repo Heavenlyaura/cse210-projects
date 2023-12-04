@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        Dictionary<int, List<string>> memberList = new Dictionary<int, List<string>>
+        {
+            { 001, new List<string> { "alice", "okafor", "22", "2003", "f", "r"} },
+            { 002, new List<string> { "james", "sam", "26", "2018", "m", "r" } },
+            // ... other entries
+            { 0020, new List<string> { "florence", "solomon", "33", "2022", "f", "r" } }
+        };
+
+        string searchFirstName = "james"; // The first name to search for
+
+        int? foundKey = null; // To store the found key, initially set to null
+
+        foreach (var kvp in memberList)
+        {
+            if (kvp.Value.Count > 0 && kvp.Value[0] == searchFirstName)
+            {
+                foundKey = kvp.Key; // Assign the key if the first item in the list matches
+                break; // Exit the loop once found
+            }
+        }
+
+        if (foundKey.HasValue)
+        {
+            Console.WriteLine($"The key associated with {searchFirstName} is: {foundKey}");
+        }
+        else
+        {
+            Console.WriteLine($"No key found for {searchFirstName}");
+        }
+    }
+}
