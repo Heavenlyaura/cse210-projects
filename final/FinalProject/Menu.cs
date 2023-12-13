@@ -25,7 +25,16 @@ public class Menu
         Console.Write("Enter Option: ");
     }
 
-    public void BishopSearchOptions()
+    public void EldersQuromMenu()
+    {
+        Console.WriteLine("Welcome");
+        Console.WriteLine("1. View Personal Information");
+        Console.WriteLine("2. Search Member");
+        Console.WriteLine("3. View Directory");
+        Console.WriteLine("5. Return to Main menu");
+        Console.Write("Enter Option: ");
+    }
+    public void SearchOptions()
     {
         Console.WriteLine("1. Search MRN: ");
         Console.WriteLine("2. Search Name: ");

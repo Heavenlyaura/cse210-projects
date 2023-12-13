@@ -72,9 +72,10 @@ public class Bishop : MemberInfo
             Console.WriteLine($"MRN: {pair.Key} Name: {pair.Value[0].ToUpperInvariant()} {pair.Value[1]}");
         }
     }
-    public bool IsBishop(int mrn) // authenticates bishops identity
+
+    public override bool IsMember(int mrn)
     {
-       List<string> isBishopList =  _memberRecords[mrn];
+        List<string> isBishopList =  _memberRecords[mrn];
        string calling = isBishopList[5];
        if (calling == "bishop")
        {
@@ -85,6 +86,7 @@ public class Bishop : MemberInfo
         return false;
        }
     }
+
     public void CreateMemberrecord()
     {
         Console.Write("Enter Firstname: ");

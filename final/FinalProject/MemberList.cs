@@ -15,7 +15,7 @@ public class MemberList
             { 007, new List<string> { "promise", "prosper", "32", "2014", "f", "r" } },
             { 008, new List<string> { "ebenezer", "rey", "26", "2016", "m", "r" } },
             { 009, new List<string> { "emmanuel", "gordon", "22", "2020", "m", "bishop" } },
-            { 0010, new List<string> { "micheal", "mahaman", "21", "2016", "m", "" } },
+            { 0010, new List<string> { "micheal", "mahaman", "21", "2016", "m", "elders quorom" } },
             { 0011, new List<string> { "wisdom", "nathan", "20", "2007", "m", "r" } },
             { 0012, new List<string> { "veronica", "okafor", "29", "2007", "f", "r" } },
             { 0013, new List<string> { "favour", "jerry", "38", "2008", "f", "r" } },

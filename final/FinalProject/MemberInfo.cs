@@ -13,12 +13,14 @@ public class MemberInfo
     private int _joined;
     private string _gender;
     private int _recordnumber;
+    protected Dictionary<int, List<string>> _memberdirectory;
+    protected MemberList _memberinformation = new();
     private Menu _menu = new();
 
-    // public MemberInfo(int recordNumber)
-    // {
-    //     _recordnumber = recordNumber;
-    // }
+    public MemberInfo()
+    {
+        _memberdirectory = _memberinformation.MemberDirectory();
+    }
 
 // Getters and Setters Section
     public string GetFirstName()
@@ -135,9 +137,9 @@ public class MemberInfo
         MemberList memberList = new();
         return memberList.MemberDirectory();
     }
-    // public void BoundCheck(int start, int end)
-    // {
-    //     if 
-    // }
+    public virtual bool IsMember(int mrn)
+    {
+        return false;
+    }
 
 }
